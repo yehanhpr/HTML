@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Logging</title>
+        <meta charset="utf-8">
+        <meta name="veiwport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="user-logging.css">
+    </head>
+
+    <body>
+        <div>
+            <h2>User Logging</h2>
+
+            <form action="/logging" method="get">
+                <label for="username" required>User Name</label><br>
+                <input type="text" id="username"><br>
+
+                <label for="password">Password</label><br>
+                <input type="password" id="password" required><br>
+
+                <button inputmode="submit" value="logging">
+                    Sign in
+                </button>
+
+                <p>If you dont have an account please<a href="user-registration.html">register</a></p>
+            </form>
+        </div>
+    </body>
+</html>

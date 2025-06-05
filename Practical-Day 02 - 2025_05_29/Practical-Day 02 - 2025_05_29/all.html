@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Styles Overview</title>
+  <style>
+    /* Background styles */
+    body {
+      background: #f0f0f0 url('background.jpg') no-repeat right top;
+      background-attachment: fixed;
+      background-size: cover;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Text styles */
+    h1 {
+      color: #003366;
+      text-align: center;
+      text-decoration: underline;
+    }
+
+    p {
+      color: #333;
+      text-indent: 50px;
+      line-height: 1.6;
+    }
+
+    p.highlight {
+      background-color: yellow;
+      letter-spacing: 2px;
+      word-spacing: 10px;
+    }
+
+    /* Font styles */
+    .font-example {
+      font: italic small-caps bold 18px/1.5 "Georgia", serif;
+    }
+
+    /* Border, margin, and padding */
+    .box {
+      border: 2px solid #333;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+    }
+
+    /* Outline */
+    .outlined {
+      outline: 2px dashed green;
+    }
+
+    /* List styles */
+    ul.custom {
+      list-style-type: square;
+    }
+
+    ol.custom {
+      list-style-type: upper-roman;
+    }
+
+    /* Table styles */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #666;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #333;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #eee;
+    }
+
+    /* Link styles */
+    a:link {
+      color: red;
+      text-decoration: none;
+    }
+
+    a:visited {
+      color: green;
+    }
+
+    a:hover {
+      color: magenta;
+      background-color: yellow;
+      text-decoration: underline;
+    }
+
+    a:active {
+      color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CSS Full Example Page</h1>
+
+  <p>This paragraph uses default font and some general text properties.</p>
+  <p class="highlight">This text is highlighted with yellow background, increased spacing, and uses CSS text styling.</p>
+  <p class="font-example">This paragraph uses custom font, italic style, and small-caps.</p>
+
+  <div class="box outlined">
+    <h2>Box with Border, Padding, Margin, and Outline</h2>
+    <p>This box demonstrates border, padding inside the box, margin outside it, and a green outline.</p>
+  </div>
+
+  <h2>Lists</h2>
+  <ul class="custom">
+    <li>Coffee</li>
+    <li>Tea</li>
+    <li>Milk</li>
+  </ul>
+
+  <ol class="custom">
+    <li>One</li>
+    <li>Two</li>
+    <li>Three</li>
+  </ol>
+
+  <h2>Table Example</h2>
+  <table>
+    <tr>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td>ABC Corp</td>
+      <td>John Doe</td>
+      <td>USA</td>
+    </tr>
+    <tr>
+      <td>XYZ Ltd</td>
+      <td>Jane Smith</td>
+      <td>UK</td>
+    </tr>
+  </table>
+
+  <h2>Styled Link</h2>
+  <p>Visit <a href="https://www.example.com" target="_blank">Example.com</a></p>
+
+</body>
+</html>

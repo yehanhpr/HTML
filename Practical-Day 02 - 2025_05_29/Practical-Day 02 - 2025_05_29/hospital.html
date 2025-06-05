@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fa;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #2a7de1;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        nav {
+            background: #205ca5;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 15px 0;
+        }
+        nav button {
+            background: #fff;
+            color: #205ca5;
+            border: none;
+            padding: 12px 28px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+        nav button.active, nav button:hover {
+            background: #2a7de1;
+            color: #fff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 12px #b0b7c1;
+            padding: 30px;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        h2 {
+            color: #205ca5;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 18px;
+        }
+        th, td {
+            border: 1px solid #e1e5ee;
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background: #f4f7fa;
+        }
+        .form-section {
+            margin-top: 15px;
+            background: #f9fbfd;
+            padding: 18px;
+            border-radius: 8px;
+        }
+        label {
+            display: inline-block;
+            width: 120px;
+            margin-bottom: 8px;
+        }
+        input, select {
+            padding: 7px;
+            width: 220px;
+            margin-bottom: 10px;
+            border: 1px solid #b2c2de;
+            border-radius: 4px;
+        }
+        .submit-btn {
+            background: #205ca5;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .submit-btn:hover {
+            background: #2a7de1;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Hospital Management System
+    </header>
+    <nav>
+        <button class="active" onclick="showTab('patients')">Patients</button>
+        <button onclick="showTab('doctors')">Doctors</button>
+        <button onclick="showTab('appointments')">Appointments</button>
+        <button onclick="showTab('billing')">Billing</button>
+    </nav>
+    <div class="container">
+        <!-- Patients Tab -->
+        <div id="patients" class="tab-content active">
+            <h2>Patients</h2>
+            <div class="form-section">
+                <h3>Add New Patient</h3>
+                <form id="patientForm">
+                    <label>Name:</label><input type="text" id="pname" required><br>
+                    <label>Age:</label><input type="number" id="page" required><br>
+                    <label>Gender:</label>
+                    <select id="pgender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Other</option>
+                    </select><br>
+                    <label>Contact:</label><input type="text" id="pcontact" required><br>
+                    <button class="submit-btn" type="submit">Add Patient</button>
+                </form>
+            </div>
+            <table id="patientsTable">
+                <thead>
+                    <tr><th>Name</th><th>Age</th><th>Gender</th><th>Contact</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Patients will appear here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Doctors Tab -->
+        <div id="doctors" class="tab-content">
+            <h2>Doctors</h2>
+            <div class="form-section">
+                <h3>Add New Doctor</h3>
+                <form id="doctorForm">
+                    <label>Name:</label><input type="text" id="dname" required><br>
+                    <label>Specialty:</label><input type="text" id="dspecialty" required><br>
+                    <label>Contact:</label><input type="text" id="dcontact" required><br>
+                    <button class="submit-btn" type="submit">Add Doctor</button>
+                </form>
+            </div>
+            <table id="doctorsTable">
+                <thead>
+                    <tr><th>Name</th><th>Specialty</th><th>Contact</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Doctors will appear here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Appointments Tab -->
+        <div id="appointments" class="tab-content">
+            <h2>Appointments</h2>
+            <div class="form-section">
+                <h3>Schedule Appointment</h3>
+                <form id="appointmentForm">
+                    <label>Patient Name:</label><input type="text" id="ap_patient" required><br>
+                    <label>Doctor Name:</label><input type="text" id="ap_doctor" required><br>
+                    <label>Date:</label><input type="date" id="ap_date" required><br>
+                    <label>Time:</label><input type="time" id="ap_time" required><br>
+                    <button class="submit-btn" type="submit">Schedule</button>
+                </form>
+            </div>
+            <table id="appointmentsTable">
+                <thead>
+                    <tr><th>Patient</th><th>Doctor</th><th>Date</th><th>Time</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Appointments will appear here -->
+                </tbody>
+            </table>
+        </div>
+        <!-- Billing Tab -->
+        <div id="billing" class="tab-content">
+            <h2>Billing</h2>
+            <div class="form-section">
+                <h3>Generate Bill</h3>
+                <form id="billingForm">
+                    <label>Patient Name:</label><input type="text" id="b_patient" required><br>
+                    <label>Amount:</label><input type="number" id="b_amount" required><br>
+                    <label>Date:</label><input type="date" id="b_date" required><br>
+                    <button class="submit-btn" type="submit">Add Bill</button>
+                </form>
+            </div>
+            <table id="billingTable">
+                <thead>
+                    <tr><th>Patient</th><th>Amount</th><th>Date</th></tr>
+                </thead>
+                <tbody>
+                    <!-- Bills will appear here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Tab navigation
+        function showTab(tab) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.getElementById(tab).classList.add('active');
+            document.querySelectorAll('nav button').forEach(btn => btn.classList.remove('active'));
+            Array.from(document.querySelectorAll('nav button')).find(btn => btn.textContent.toLowerCase() === tab).classList.add('active');
+        }
+
+        // Patients
+        document.getElementById('patientForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('pname').value;
+            const age = document.getElementById('page').value;
+            const gender = document.getElementById('pgender').value;
+            const contact = document.getElementById('pcontact').value;
+            const table = document.getElementById('patientsTable').getElementsByTagName('tbody')[0];
+            table.innerHTML += `<tr><td>${name}</td><td>${age}</td><td>${gender}</td><td>${contact}</td></tr>`;
+            this.reset();
+        };
+
+        // Doctors
+        document.getElementById('doctorForm').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('dname').value;
+            const specialty = document.getElementById('dspecialty').value;
+            const contact = document.getElementById('dcontact').value;
+            const table = document.getElementById('doctorsTable').getElementsByTagName('tbody')[0];
+            table.innerHTML += `<tr><td>${name}</td><td>${specialty}</td><td>${contact}</td></tr>`;
+            this.reset();
+        };
+
+        // Appointments
+        document.getElementById('appointmentForm').onsubmit = function(e) {
+            e.preventDefault();
+            const patient = document.getElementById('ap_patient').value;
+            const doctor = document.getElementById('ap_doctor').value;
+            const date = document.getElementById('ap_date').value;
+            const time = document.getElementById('ap_time').value;
+            const table = document.getElementById('appointmentsTable').getElementsByTagName('tbody')[0];
+            table.innerHTML += `<tr><td>${patient}</td><td>${doctor}</td><td>${date}</td><td>${time}</td></tr>`;
+            this.reset();
+        };
+
+        // Billing
+        document.getElementById('billingForm').onsubmit = function(e) {
+            e.preventDefault();
+            const patient = document.getElementById('b_patient').value;
+            const amount = document.getElementById('b_amount').value;
+            const date = document.getElementById('b_date').value;
+            const table = document.getElementById('billingTable').getElementsByTagName('tbody')[0];
+            table.innerHTML += `<tr><td>${patient}</td><td>${amount}</td><td>${date}</td></tr>`;
+            this.reset();
+        };
+    </script>
+</body>
+</html>

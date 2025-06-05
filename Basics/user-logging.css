@@ -1,0 +1,22 @@
+*{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+div{
+    background-attachment: fixed;
+    background-color: rgb(89, 5, 122);
+    font-family: arial;
+    font-size: 30px;
+}
+
+
+div p{
+    font-size: 15px;
+}
+
+div button{
+    background-color: rgb(37, 11, 79);
+    
+}

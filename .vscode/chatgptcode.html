@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Layout</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            background: #b6ff57;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .navbar .logo {
+            background: #72ff00;
+            padding: 5px 10px;
+            border: 1px solid #000;
+        }
+        .navbar .nav-links {
+            display: flex;
+            gap: 10px;
+        }
+        .navbar .nav-links div {
+            background: orange;
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+        .header {
+            background: gray;
+            text-align: center;
+            padding: 20px;
+            color: rgb(175, 20, 20);
+        }
+        .main {
+            display: flex;
+        }
+        .sidebar {
+            background: purple;
+            padding: 10px;
+            color: white;
+            width: 150px;
+        }
+        .sidebar .menu {
+            background: yellow;
+            color: black;
+            margin-bottom: 10px;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        .gallery-container {
+            flex-grow: 1;
+            background: lightblue;
+            padding: 20px;
+            text-align: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            gap: 20px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .gallery div {
+            background: #72ff00;
+            width: 100px;
+            height: 120px;
+        }
+        .footer {
+            background: #b6ff57;
+            text-align: center;
+            padding: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <div class="logo">Logo</div>
+        <div class="nav-links">
+            <div>Home</div>
+            <div>ContactUs</div>
+            <div>About Us</div>
+        </div>
+    </div>
+
+    <div class="header">Header</div>
+
+    <div class="main">
+        <div class="sidebar">
+            <div class="menu">Menu</div>
+            <div class="menu">Menu</div>
+            <div class="menu">Menu</div>
+            <div class="menu">Menu</div>
+            <div style="margin-top: 20px;">Vertical Bar</div>
+        </div>
+
+        <div class="gallery-container">
+            <div>Image Gallery</div>
+            <div class="gallery">
+                <div></div><div></div><div></div>
+                <div></div><div></div><div></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">Footer</div>
+
+</body>
+</html>

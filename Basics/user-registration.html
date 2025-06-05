@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="user-registration.css">
+    <title>User Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div >
+        <h2>User Registration Form</h2>
+    <form action="/register" method="post">
+        <label for="fullname">Full Name:</label><br>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="username">Username:</label><br>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="radio" name="gender" value="male" checked="checked">Male
+        <input type="radio" name="gender" value="female" checked="checked">Female <br><br> 
+        <table border="0">
+            <tr>
+                <td>i have an bike:</td>
+                <td><input type="checkbox" name="vehicle1" value="bike">Bike </td>
+            </tr>
+            <tr>
+                <td>i have a car:</td>
+                <td><input type="checkbox" name="vehicle2" value="car">Car </td>
+            </tr>
+            <tr>
+                <td>i have a jet:</td>
+                <td><input type="checkbox" name="vehicle3" value="jet">Jet</td>
+            </tr>
+        </table><br><br>
+        
+        <button inputmode="submit" value="register">
+             Register
+        </button>
+        <p style="font-size: 15px;">if you Already have an account<a href="user-logging.html">sign in</a></p>
+    </div>
+    
+       
+    </form>
+</body>
+</html>
