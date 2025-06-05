@@ -134,14 +134,17 @@
       cursor: pointer;
     }
 
-    .pill.cs { background-color: #3b82f6; }
-    .pill.eng { background-color: #ef4444; }
+    .pill.cs { background-color: #0a21f1; }
+    .pill.eng { background-color: #eb0a0a; }
     .pill.tech { background-color: #6366f1; }
-    .pill.human { background-color: #ec4899; }
+    .pill.human { background-color: #f5087e; }
     .pill.med { background-color: #f97316; }
-    .pill.mgmt { background-color: #10b981; }
-    .pill.applied { background-color: #eab308; }
+    .pill.mgmt { background-color: #13f3a8; }
+    .pill.applied { background-color: #f1cb56; }
     .pill.all { background-color: #6b7280; }
+    .pill.vvs { background-color: #df0606; }
+    .pill.ahs { background-color: #72085b; }
+    .pill.pst { background-color: #08b41f; }
 
     @media (max-width: 768px) {
       .stats {
@@ -291,11 +294,141 @@
         align-items: center;
       }
     }
+
+    .contributors-section {
+      padding: 60px 20px;
+      text-align: center;
+      background-color: #1c1c1c;
+    }
+
+    .contributors-section h2 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+
+    .contributors {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .contributor {
+      background-color: #2a2a2a;
+      border-radius: 10px;
+      padding: 20px;
+      width: 180px;
+      text-align: center;
+    }
+
+    .contributor img {
+      width: 60px;
+      height: 60px;
+      background-color: #444;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .contributor h3 {
+      margin: 10px 0 5px;
+      font-size: 16px;
+    }
+
+    .contributor p {
+      font-size: 14px;
+      color: #ccc;
+      margin: 0 0 10px;
+    }
+
+    .contributor span {
+      background-color: #1a1a1a;
+      color: #aaa;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 15px;
+      display: inline-block;
+    }
+
+    .cta-section {
+      background-color: #1e40af;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 16px;
+      margin-bottom: 30px;
+    }
+
+    .cta-section button {
+      background-color: #111;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 14px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
+      color: #ccc;
+      padding: 40px 20px;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .footer-column {
+      margin-bottom: 20px;
+      flex: 1 1 200px;
+    }
+
+    .footer-column h4 {
+      color: white;
+      margin-bottom: 15px;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column ul li a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 13px;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      margin-top: 20px;
+    }
+
+
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">USJ <span>Project Showcase</span></div>
+    <div class="logo"><img src="" alt="">USJ <span>Project Showcase</span></div>
     <nav>
       <button class="login">Login</button>
       <button class="signup">Sign Up</button>
@@ -338,9 +471,9 @@
       <div class="pill med"><a href="#Medical Science" style="color: white;">Medical Sciences</a></div>
       <div class="pill applied"><a href="#Applied Science" style="color: white;">Applied Science</a> </div>
       <div class="pill tech"><a href="#Management " style="color: white;">Management </a></div>
-      <div class="pill eng"><a href="#Post Graduate" style="color: white;">Post Graduate</a></div>
-      <div class="pill eng"><a href="#Alied Health" style="color: white;">Alied Health</a></div>
-      <div class="pill eng"><a href="#Aquatech" style="color: white;">Aquatech</a></div>
+      <div class="pill pst"><a href="#Post Graduate" style="color: white;">Post Graduate</a></div>
+      <div class="pill ahs"><a href="#Alied Health" style="color: white;">Alied Health</a></div>
+      <div class="pill vvs"><a href="#Aquatech" style="color: white;">Aquatech</a></div>
       <div class="pill all">All Categories</div>
     </div>
   </section>
@@ -407,5 +540,81 @@
       </div>
     </div>
   </section>
+
+    <section class="contributors-section">
+    <h2>Top Student Contributors</h2>
+    <div class="contributors">
+      <div class="contributor">
+        <img src="#" alt="User Icon">
+        <h3>Dinesh Rajapaksa</h3>
+        <p>Computer Science</p>
+        <span>12 Projects</span>
+      </div>
+      <div class="contributor">
+        <img src="#" alt="User Icon">
+        <h3>Malini Gunawardena</h3>
+        <p>Management</p>
+        <span>9 Projects</span>
+      </div>
+      <div class="contributor">
+        <img src="#" alt="User Icon">
+        <h3>Asanka Perera</h3>
+        <p>Engineering</p>
+        <span>8 Projects</span>
+      </div>
+      <div class="contributor">
+        <img src="#" alt="User Icon">
+        <h3>Lakshmi Jayasuriya</h3>
+        <p>Medical Sciences</p>
+        <span>7 Projects</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section class="cta-section">
+    <h2>Ready to Showcase Your Academic Work?</h2>
+    <p>Join the University of Sri Jayewardenepura’s project showcase platform and get recognition for your innovative work.</p>
+    <button>Get Started Today</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>USJ Project Showcase</h4>
+        <p>A platform for University of Sri Jayewardenepura students to showcase their academic excellence.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Projects</a></li>
+          <li><a href="#">Students</a></li>
+          <li><a href="#">Faculties</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Help Center</a></li>
+          <li><a href="#">Guidelines</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h4>Contact</h4>
+        <ul>
+          <li>Gangodawila, Nugegoda, Sri Lanka</li>
+          <li><a href="mailto:projects@sjp.ac.lk">projects@sjp.ac.lk</a></li>
+          <li>+94 11 2758000</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2023 University of Sri Jayewardenepura. All rights reserved.
+    </div>
+  </footer>
 </body>
 </html>
