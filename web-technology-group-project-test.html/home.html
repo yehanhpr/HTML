@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USJ Project Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: #0f172a;
+      color: white;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background-color: #1e293b;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    nav button {
+      margin-left: 10px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .login {
+      background-color: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .signup {
+      background-color: #3b82f6;
+      color: white;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: linear-gradient(180deg, #1e40af 0%, #0f172a 100%);
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #cbd5e1;
+    }
+
+    .hero button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .explore-btn {
+      background-color: #0ea5e9;
+      color: white;
+    }
+
+    .create-btn {
+      background-color: transparent;
+      border: 2px solid #0ea5e9;
+      color: #0ea5e9;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 50px;
+      padding: 40px 20px;
+      background-color: #1e293b;
+      text-align: center;
+    }
+
+    .stat h2 {
+      font-size: 2rem;
+      color: #38bdf8;
+    }
+
+    .categories {
+      padding: 50px 20px;
+      background-color: #0f172a;
+      text-align: center;
+    }
+
+    .categories h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .pill {
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+    }
+
+    .pill.cs { background-color: #3b82f6; }
+    .pill.eng { background-color: #ef4444; }
+    .pill.tech { background-color: #6366f1; }
+    .pill.human { background-color: #ec4899; }
+    .pill.med { background-color: #f97316; }
+    .pill.mgmt { background-color: #10b981; }
+    .pill.applied { background-color: #eab308; }
+    .pill.all { background-color: #6b7280; }
+
+    @media (max-width: 768px) {
+      .stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+     .featured-projects {
+      background-color: #111827;
+      padding: 60px 40px;
+    }
+
+    .featured-projects h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .project-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-card {
+      background-color: #1f2937;
+      padding: 20px;
+      border-radius: 12px;
+      width: 300px;
+      position: relative;
+    }
+
+    .project-card span.badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-right: 8px;
+      margin-bottom: 6px;
+    }
+
+    .badge.cs { background-color: #3b82f6; }
+    .badge.mgmt { background-color: #10b981; }
+    .badge.human { background-color: #ec4899; }
+
+    .project-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 10px 0 6px;
+    }
+
+    .project-card p {
+      font-size: 0.9rem;
+      color: #d1d5db;
+    }
+
+    .project-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 15px;
+      font-size: 0.85rem;
+    }
+
+    .author-initials {
+      background-color: #334155;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+
+    .rating {
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      color: #facc15;
+    }
+
+    .project-card button {
+      margin-top: 12px;
+      padding: 6px 14px;
+      background-color: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .how-it-works {
+      padding: 60px 40px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+
+    .how-it-works h2 {
+      font-size: 1.8rem;
+      margin-bottom: 40px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .step {
+      width: 250px;
+    }
+
+    .step img {
+      background-color: #1e40af;
+      border-radius: 50%;
+      padding: 16px;
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+    }
+
+    .step h3 {
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+    }
+
+    @media (max-width: 768px) {
+      .stats {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .project-list {
+        flex-direction: column;
+        align-items: center;
+      }
+      .steps {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">USJ <span>Project Showcase</span></div>
+    <nav>
+      <button class="login">Login</button>
+      <button class="signup">Sign Up</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Showcase Your Academic Excellence</h1>
+    <p>A platform for University of Sri Jayewardenepura students to showcase their innovative projects and research work.</p>
+    <button class="explore-btn">Explore Projects</button>
+    <button class="create-btn">Create Profile</button>
+  </section>
+
+  <section class="stats">
+    <div class="stat">
+      <h2>1,200+</h2>
+      <p>Student Projects</p>
+    </div>
+    <div class="stat">
+      <h2>3,500+</h2>
+      <p>Active Students</p>
+    </div>
+    <div class="stat">
+      <h2>250+</h2>
+      <p>Academic Supervisors</p>
+    </div>
+    <div class="stat">
+      <h2>11</h2>
+      <p>Faculties</p>
+    </div>
+  </section>
+
+  <section class="categories">
+    <h2>Browse by Category</h2>
+    <div class="pill-container">
+      <div class="pill cs"><a href="#computer Science" style="color: white;">Computer Science</a></div>
+      <div class="pill mgmt"><a href="#Engineering" style="color: white;">Engineering</a></div>
+      <div class="pill human"><a href="#Humanities" style="color: white;">Humanities</a></div>
+      <div class="pill eng"><a href="#Dental" style="color: white;">Dental</a></div>
+      <div class="pill med"><a href="#Medical Science" style="color: white;">Medical Sciences</a></div>
+      <div class="pill applied"><a href="#Applied Science" style="color: white;">Applied Science</a> </div>
+      <div class="pill tech"><a href="#Management " style="color: white;">Management </a></div>
+      <div class="pill eng"><a href="#Post Graduate" style="color: white;">Post Graduate</a></div>
+      <div class="pill eng"><a href="#Alied Health" style="color: white;">Alied Health</a></div>
+      <div class="pill eng"><a href="#Aquatech" style="color: white;">Aquatech</a></div>
+      <div class="pill all">All Categories</div>
+    </div>
+  </section>
+
+  <section class="featured-projects">
+    <h2>Featured Projects</h2>
+    <div class="project-list">
+      <div class="project-card">
+        <span class="badge cs">Computer Science</span>
+        <small>June 2023</small>
+        <h3>AI-Powered Crop Disease Detection System</h3>
+        <p>A machine learning model that identifies crop diseases from images, helping farmers take early action.</p>
+        <div class="project-meta">
+          <div class="author-initials">KP</div>
+          Kasun Perera
+        </div>
+        <div class="rating">⭐ 4.9</div>
+        <button>View Project</button>
+      </div>
+      <div class="project-card">
+        <span class="badge mgmt">Management</span>
+        <small>May 2023</small>
+        <h3>Sustainable Tourism Development Model</h3>
+        <p>A comprehensive framework for sustainable tourism development in Sri Lanka’s coastal regions.</p>
+        <div class="project-meta">
+          <div class="author-initials">ND</div>
+          Nirmala De Silva
+        </div>
+        <div class="rating">⭐ 4.7</div>
+        <button>View Project</button>
+      </div>
+      <div class="project-card">
+        <span class="badge human">Humanities</span>
+        <small>July 2023</small>
+        <h3>Cultural Impact of Colonial Architecture</h3>
+        <p>An analysis of how colonial architecture has influenced modern Sri Lankan cultural identity.</p>
+        <div class="project-meta">
+          <div class="author-initials">TF</div>
+          Tharushi Fernando
+        </div>
+        <div class="rating">⭐ 4.8</div>
+        <button>View Project</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <img src="https://img.icons8.com/ios-filled/50/user.png" alt="Create Profile" />
+        <h3>Create Your Profile</h3>
+        <p>Sign up and create your student profile with your academic details and areas of interest.</p>
+      </div>
+      <div class="step">
+        <img src="https://img.icons8.com/ios-filled/50/upload.png" alt="Upload Project" />
+        <h3>Upload Your Project</h3>
+        <p>Upload your project details, images, documents, and links to showcase your work.</p>
+      </div>
+      <div class="step">
+        <img src="https://img.icons8.com/ios-filled/50/visible.png" alt="Get Discovered" />
+        <h3>Get Discovered</h3>
+        <p>Your projects become visible to peers, faculty, and potential employers or collaborators.</p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
