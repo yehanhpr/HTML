@@ -3,7 +3,22 @@
     <head>
         <style>
             ::marker{
-                color: rgb(38, 245, 63);
+                
+            }
+            nav{
+                border: 2px;
+                border-color: greenyellow;
+                border-style:groove;
+            }
+            nav li{
+                border-top: 1px;
+                border-color: rgb(79, 237, 105);
+                border-style: inset;
+                display: inline-block;
+            }
+            nav li a:focus{
+                background-color: blue;
+                color: white;
             }
         </style>
     </head>
@@ -11,12 +26,14 @@
         
         <body>
             <h4>Disc bullets list:</h4>
-            <ul type="disc">
-                <li>Apples</li>
+            <nav>
+                <ul type="">
+                <li><a href="k">Apples</a></li>
                 <li>Bananas</li>
                 <li>Lemons</li>
                 <li>Oranges</li>
             </ul>
+            </nav>
 
             <h4>Circle bullets list:</h4>
             <ul type="Square">

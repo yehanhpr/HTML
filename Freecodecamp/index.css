@@ -1,1 +1,99 @@
 @import url();
+
+.column{
+    column-width: 250px;
+    column-count: 4;
+    columns: 4 250px;
+    column-rule: 1px solid greenyellow;
+     
+}
+
+h2{
+    background-color: rgb(132, 183, 217);
+    break-inside: avoid;
+    break-inside: avoid-column;
+}
+
+.column .quote{
+     font-size:20px;
+     margin: 2px;
+     column-span: all;
+     text-align: center;
+}
+
+.container{
+    max-width: 800px;
+    min-height: 400px;
+    margin-inline: auto;
+    display: flex;
+}
+
+.outer-container{
+    border: dashed greenyellow;
+    width: 75vw;
+    height: 85vw;
+    margin: 40px auto;
+    position: relative;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+    align-content: center;
+}
+
+.inner-container{
+    border: 2px solid black;
+    width: 40vw;
+    height: 50vw;
+    margin: 200px auto;
+    align-items: center;
+    justify-content: center;
+ }
+
+.box {
+    width: 100px;
+    height: 100px;
+    color: white;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    flex-flow: nowrap ;
+    align-content: center;
+    display: inline-block;
+    background-color: blue;
+    border: 1px solid black ;
+    margin: 2px;
+    margin-top: 100px;
+    margin-left: 5px;
+    
+
+}
+
+
+
+.h{
+    height: 100px;
+    width: 100%;
+    color: white;
+    background-color: blue;
+    text-align: center;
+    font-size: 50px;
+    position: relative
+    ;
+}
+
+.c{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+}
+.c a{
+    display: inline-block;
+    border-right: 2px dashed red;
+    padding: 10px;
+    color: white;
+}
+ 
