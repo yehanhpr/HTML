@@ -8,6 +8,13 @@
      
 }
 
+body{
+    display: grid;
+    grid-template-areas: "h" "h" "h" "h" "h" "h" "h" "h" "h"
+    "mn" "mn" "mn""mn""mn" "mn" "mn" "sb" "sb"
+    "ft" "ft" "ft""ft" "ft" "ft" "ft" "ft" "ft";
+}
+
 h2{
     background-color: rgb(132, 183, 217);
     break-inside: avoid;
@@ -28,27 +35,7 @@ h2{
     display: flex;
 }
 
-.outer-container{
-    border: dashed greenyellow;
-    width: 75vw;
-    height: 85vw;
-    margin: 40px auto;
-    position: relative;
-    border: 1px solid black;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-    align-content: center;
-}
 
-.inner-container{
-    border: 2px solid black;
-    width: 40vw;
-    height: 50vw;
-    margin: 200px auto;
-    align-items: center;
-    justify-content: center;
- }
 
 .box {
     width: 100px;
@@ -57,7 +44,7 @@ h2{
     padding: 1rem;
     justify-content: center;
     align-items: center;
-    flex-flow: nowrap ;
+    flex-flow: nowrap  ;
     align-content: center;
     display: inline-block;
     background-color: blue;
@@ -65,6 +52,8 @@ h2{
     margin: 2px;
     margin-top: 100px;
     margin-left: 5px;
+    row-gap: 3px;
+    column-gap: 2px;
     
 
 }
@@ -97,3 +86,6 @@ h2{
     color: white;
 }
  
+.sidebar{
+    
+}
