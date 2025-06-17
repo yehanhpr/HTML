@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="Admin_Dashboard.css">
+  <link rel="script" href="Admin_Dashboard.js">
+</head>
+<body>
+  <header class="topbar">
+    <div class="logo">USJ Projects<br><span>University of Sri Jayewardenepura</span></div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Projects</a>
+      <a href="#">Settings</a>
+      <a href="#">About</a>
+      <input type="text" placeholder="🔍 Search" />
+      <button class="upload-btn">Upload</button>
+      <div class="user-icon">GM</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="dashboard-summary">
+      <h2>Admin Dashboard</h2>
+      <p>Manage projects, users, and platform settings</p>
+      <div class="stats">
+        <div class="card">Total Projects <strong>1,247</strong><span class="trend up">+12%</span></div>
+        <div class="card">Pending Review <strong>23</strong><span class="trend up">+5%</span></div>
+        <div class="card">Active Users <strong>892</strong><span class="trend up">+8%</span></div>
+        <div class="card">This Month <strong>67</strong><span class="trend up">+15%</span></div>
+      </div>
+    </section>
+
+    <nav class="admin-nav">
+      <a href="#">Projects</a>
+      <a href="#">Users</a>
+      <a href="#">Settings</a>
+      <a href="#">Reports</a>
+    </nav>
+
+    <section class="projects">
+      <h3>Project Management</h3>
+      <div class="table-controls">
+        <input type="text" placeholder="Search Projects">
+        <select>
+          <option>All Status</option>
+          <option>Approved</option>
+          <option>Pending</option>
+          <option>Rejected</option>
+        </select>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Project</th><th>Author</th><th>Department</th><th>Status</th><th>Upload Date</th><th>Views</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>AI-Powered Student Performance Analytics 2024</td>
+            <td>Kasun Perera</td>
+            <td>Computer Science</td>
+            <td><span class="status approved">Approved</span></td>
+            <td>3/15/2024</td>
+            <td>234</td>
+            <td>...</td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <section class="users">
+      <h3>User Management</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th><th>Email</th><th>Department</th><th>Role</th><th>Projects</th><th>Join Date</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Kasun Perera</td>
+            <td>kasun.perera@sjp.ac.lk</td>
+            <td>Computer Science</td>
+            <td>Student</td>
+            <td>3</td>
+            <td>9/15/2023</td>
+            <td>...</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="settings">
+      <h3>Platform Settings</h3>
+      <label>Maximum File Size (MB)
+        <input type="number" value="50">
+      </label>
+      <label>Auto-approve Projects
+        <select>
+          <option>Disabled</option>
+          <option>Enabled</option>
+        </select>
+      </label>
+      <label>Allowed File Types
+        <input type="text" value="pdf,doc,docx,ppt,pptx,zip,rar,jpg,jpeg,png,gif,mp4,avi,mov">
+      </label>
+      <button>Save Settings</button>
+    </section>
+
+    <section class="notifications">
+      <h3>Email Notifications</h3>
+      <label>New Project Submissions <button>Enable</button></label>
+      <label>User Registration <button>Enable</button></label>
+    </section>
+
+    <section class="analytics">
+      <h3>Platform Analytics</h3>
+      <div class="analytics-cards">
+        <div class="card blue">1,247<br>Total Projects</div>
+        <div class="card green">892<br>Active Users</div>
+        <div class="card purple">15<br>Departments</div>
+      </div>
+    </section>
+
+    <section class="activity">
+      <h3>Recent Activity</h3>
+      <ul>
+        <li><span>🟡</span> New project pending review by Tharaka Jayasinghe</li>
+        <li><span>🟢</span> Project approved: AI-Powered Student Analytics</li>
+        <li><span>🔵</span> New user registered: Nimali Silva</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-left">
+      <strong>USJ Student Projects</strong><br>University of Sri Jayewardenepura
+      <p>A platform for students to showcase academic projects.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#">Browse Projects</a>
+      <a href="#">Upload Project</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-support">
+      <a href="#">Help Center</a>
+      <a href="#">Guidelines</a>
+      <a href="#">Privacy</a>
+    </div>
+    <div class="footer-bottom">© 2024 University of Sri Jayewardenepura. All rights reserved.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

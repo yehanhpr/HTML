@@ -1,0 +1,108 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #fafafa;
+  color: #333;
+}
+header.topbar {
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+}
+header .logo {
+  font-weight: bold;
+  font-size: 18px;
+}
+nav a, nav input, .upload-btn {
+  margin: 0 10px;
+}
+.upload-btn {
+  background: black;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+}
+.user-icon {
+  background: #ddd;
+  border-radius: 50%;
+  padding: 6px 10px;
+}
+main {
+  padding: 20px 40px;
+}
+.stats {
+  display: flex;
+  gap: 20px;
+}
+.stats .card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.trend.up {
+  color: green;
+}
+.admin-nav {
+  margin: 20px 0;
+  border-bottom: 1px solid #ccc;
+}
+.admin-nav a {
+  margin-right: 15px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  margin-top: 10px;
+}
+th, td {
+  border: 1px solid #eee;
+  padding: 8px;
+}
+.status.approved {
+  color: white;
+  background: green;
+  padding: 2px 6px;
+  border-radius: 5px;
+}
+.status.pending {
+  background: orange;
+}
+.status.rejected {
+  background: red;
+  color: white;
+}
+.analytics-cards {
+  display: flex;
+  gap: 20px;
+}
+.analytics-cards .card {
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+}
+.card.blue { background: #3b82f6; }
+.card.green { background: #10b981; }
+.card.purple { background: #a855f7; }
+footer {
+  background: #0a0a23;
+  color: white;
+  padding: 40px;
+}
+footer a {
+  color: #ccc;
+  display: block;
+  margin-bottom: 5px;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #999;
+}

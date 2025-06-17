@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Project Showcase</title>
+    <base target="_self">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@preline/preline@2.0.0/dist/preline.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .project-image {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .project-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-full flex flex-col">
+    <!-- Navigation -->
+    <nav class="bg-white dark:bg-gray-800 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" onclick="navigate(event, 'home')" class="flex items-center text-xl font-bold text-gray-900 dark:text-white">
+                        <i class="fas fa-graduation-cap mr-2 text-blue-500"></i>
+                        Project Showcase
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" onclick="navigate(event, 'home')" class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium">Home</a>
+                    <a href="#" onclick="navigate(event, 'projects')" class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium">Projects</a>
+                    <a href="#" onclick="navigate(event, 'add-project')" class="text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400 px-3 py-2 text-sm font-medium">Add Project</a>
+                    <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm p-2.5">
+                        <i id="theme-icon" class="fas fa-moon"></i>
+                    </button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#" onclick="navigate(event, 'home')" class="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+                <a href="#" onclick="navigate(event, 'projects')" class="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="#" onclick="navigate(event, 'add-project')" class="block px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">Add Project</a>
+                <button id="mobile-theme-toggle" type="button" class="w-full text-left px-3 py-2 text-base font-medium text-gray-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
+                    <i id="mobile-theme-icon" class="fas fa-moon mr-2"></i> Toggle Theme
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Home Page -->
+        <div id="home-page" class="fade-in">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold text-gray-900 dark:text-white sm:text-5xl sm:tracking-tight lg:text-6xl">
+                        Showcase Your Student Projects
+                    </h1>
+                    <p class="mt-6 max-w-2xl mx-auto text-xl text-gray-600 dark:text-gray-300">
+                        A platform for students to display their academic and personal projects, share knowledge, and get feedback.
+                    </p>
+                    <div class="mt-10 flex justify-center gap-4">
+                        <a href="#" onclick="navigate(event, 'projects')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Browse Projects
+                        </a>
+                        <a href="#" onclick="navigate(event, 'add-project')" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-blue-700 bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:text-white dark:bg-blue-700 dark:hover:bg-blue-600">
+                            Add Your Project
+                        </a>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8">Featured Projects</h2>
+                    <div id="featured-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Featured projects will be loaded here -->
+                    </div>
+                </div>
+
+                <div class="mt-16 bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                    <div class="text-center">
+                        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Why Showcase Your Work?</h2>
+                        <p class="text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
+                            Building a portfolio of your projects helps you demonstrate your skills to potential employers, collaborate with peers, and reflect on your learning journey.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Career Opportunities</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Show potential employers your practical skills and problem-solving abilities.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                                <i class="fas fa-users text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Peer Learning</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Learn from other students' projects and get inspired for your next creation.
+                            </p>
+                        </div>
+                        <div class="bg-blue-50 dark:bg-gray-700 p-6 rounded-lg">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white mb-4">
+                                <i class="fas fa-chart-line text-xl"></i>
+                            </div>
+                            <h3 class="text-lg font-medium text-gray-900 dark:text-white mb-2">Track Progress</h3>
+                            <p class="text-gray-600 dark:text-gray-300">
+                                Document your growth as you complete more complex projects over time.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects-page" class="hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex justify-between items-center mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white">All Projects</h1>
+                <div class="flex items-center">
+                    <div class="relative">
+                        <select id="filter-category" class="appearance-none bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md py-2 pl-3 pr-8 text-gray-900 dark:text-white focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            <option value="all">All Categories</option>
+                            <option value="web">Web Development</option>
+                            <option value="mobile">Mobile App</option>
+                            <option value="ai">AI/ML</option>
+                            <option value="data">Data Science</option>
+                            <option value="iot">IoT</option>
+                            <option value="game">Game Development</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700 dark:text-gray-300">
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                    <button id="apply-filter" class="ml-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        Filter
+                    </button>
+                </div>
+            </div>
+            <div id="all-projects" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- All projects will be loaded here -->
+            </div>
+            <div id="no-projects" class="hidden text-center py-12">
+                <i class="fas fa-folder-open text-5xl text-gray-400 mb-4"></i>
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white mb-2">No projects found</h3>
+                <p class="text-gray-600 dark:text-gray-300 mb-4">Try adjusting your filters or be the first to add a project!</p>
+                <a href="#" onclick="navigate(event, 'add-project')" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                    Add Project
+                </a>
+            </div>
+        </div>
+
+        <!-- Add Project Page -->
+        <div id="add-project-page" class="hidden max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-8">
+                <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Add Your Project</h1>
+                <form id="project-form" class="space-y-6">
+                    <div>
+                        <label for="project-title" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Project Title</label>
+                        <input type="text" id="project-title" name="title" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="project-description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+                        <textarea id="project-description" name="description" rows="4" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white"></textarea>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="project-category" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Category</label>
+                            <select id="project-category" name="category" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                                <option value="">Select a category</option>
+                                <option value="web">Web Development</option>
+                                <option value="mobile">Mobile App</option>
+                                <option value="ai">AI/ML</option>
+                                <option value="data">Data Science</option>
+                                <option value="iot">IoT</option>
+                                <option value="game">Game Development</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="project-year" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Year Completed</label>
+                            <input type="number" id="project-year" name="year" min="2000" max="2099" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="project-image" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Image URL</label>
+                        <input type="url" id="project-image" name="image" placeholder="https://example.com/image.jpg" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                        <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">Provide a direct link to your project image</p>
+                    </div>
+                    
+                    <div>
+                        <label for="project-link" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Project URL (optional)</label>
+                        <input type="url" id="project-link" name="link" placeholder="https://example.com" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="project-tags" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Tags (comma separated)</label>
+                        <input type="text" id="project-tags" name="tags" placeholder="HTML, CSS, JavaScript" class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="project-author" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Your Name</label>
+                        <input type="text" id="project-author" name="author" required class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:text-white">
+                    </div>
+                    
+                    <div class="flex justify-end space-x-4">
+                        <button type="button" onclick="navigate(event, 'projects')" class="px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-white bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Cancel
+                        </button>
+                        <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            Submit Project
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Project Detail Page -->
+        <div id="project-detail-page" class="hidden max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="bg-white dark:bg-gray-800 shadow-md rounded-lg overflow-hidden">
+                <div id="detail-image-container" class="h-64 bg-gray-200 dark:bg-gray-700 overflow-hidden">
+                    <img id="detail-image" src="" alt="Project image" class="w-full h-full object-cover">
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h1 id="detail-title" class="text-3xl font-bold text-gray-900 dark:text-white mb-2"></h1>
+                            <div class="flex items-center space-x-4 mb-4">
+                                <span id="detail-author" class="text-gray-600 dark:text-gray-300"></span>
+                                <span id="detail-year" class="text-gray-600 dark:text-gray-300"></span>
+                                <span id="detail-category" class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200"></span>
+                            </div>
+                        </div>
+                        <a id="detail-link" href="#" target="_blank" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-external-link-alt mr-2"></i> View Project
+                        </a>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Description</h2>
+                        <p id="detail-description" class="text-gray-600 dark:text-gray-300 whitespace-pre-line"></p>
+                    </div>
+                    
+                    <div class="mt-6">
+                        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Technologies Used</h2>
+                        <div id="detail-tags" class="flex flex-wrap gap-2"></div>
+                    </div>
+                    
+                    <div class="mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
+                        <button onclick="navigate(event, 'projects')" class="inline-flex items-center px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm text-sm font-medium text-gray-700 dark:text-white bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Projects
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Project Showcase</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        A platform for students to display their academic and personal projects, share knowledge, and get feedback.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" onclick="navigate(event, 'home')" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Home</a></li>
+                        <li><a href="#" onclick="navigate(event, 'projects')" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                        <li><a href="#" onclick="navigate(event, 'add-project')" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">Add Project</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Connect</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center text-gray-600 dark:text-gray-300 text-sm">
+                <p>© 2023 Student Project Showcase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="success-modal" class="hidden fixed inset-0 bg-gray-600 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 max-w-sm w-full">
+            <div class="text-center">
+                <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100 dark:bg-green-900">
+                    <i class="fas fa-check text-green-600 dark:text-green-300"></i>
+                </div>
+                <h3 class="mt-3 text-lg font-medium text-gray-900 dark:text-white">Success!</h3>
+                <div class="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    <p id="success-message">Your project has been added successfully.</p>
+                </div>
+                <div class="mt-4">
+                    <button type="button" onclick="closeModal('success-modal')" class="inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:text-sm">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Sample project data
+        const sampleProjects = [
+            {
+                id: '1',
+                title: 'E-commerce Website',
+                description: 'A full-stack e-commerce platform with product listings, cart functionality, and user authentication.',
+                category: 'web',
+                year: '2023',
+                image: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                link: 'https://example.com/ecommerce',
+                tags: ['React', 'Node.js', 'MongoDB', 'Express'],
+                author: 'Alex Johnson'
+            },
+            {
+                id: '2',
+                title: 'Health Tracker App',
+                description: 'A mobile application that helps users track their fitness goals, nutrition, and sleep patterns.',
+                category: 'mobile',
+                year: '2022',
+                image: 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                link: 'https://example.com/healthtracker',
+                tags: ['Flutter', 'Firebase', 'Dart'],
+                author: 'Sarah Williams'
+            },
+            {
+                id: '3',
+                title: 'Image Recognition System',
+                description: 'A machine learning model that can classify images into different categories with high accuracy.',
+                category: 'ai',
+                year: '2023',
+                image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+                link: 'https://example.com/imagerecognition',
+                tags: ['Python', 'TensorFlow', 'OpenCV'],
+                author: 'Michael Chen'
+            }
+        ];
+
+        // Initialize projects in localStorage if not exists
+        if (!localStorage.getItem('projects')) {
+            localStorage.setItem('projects', JSON.stringify(sampleProjects));
+        }
+
+        // DOM elements
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
+        const mobileThemeIcon = document.getElementById('mobile-theme-icon');
+        const filterCategory = document.getElementById('filter-category');
+        const applyFilter = document.getElementById('apply-filter');
+        const projectForm = document.getElementById('project-form');
+        const allProjectsContainer = document.getElementById('all-projects');
+        const featuredProjectsContainer = document.getElementById('featured-projects');
+        const noProjectsMessage = document.getElementById('no-projects');
+
+        // Page elements
+        const homePage = document.getElementById('home-page');
+        const projectsPage = document.getElementById('projects-page');
+        const addProjectPage = document.getElementById('add-project-page');
+        const projectDetailPage = document.getElementById('project-detail-page');
+
+        // Project detail elements
+        const detailTitle = document.getElementById('detail-title');
+        const detailDescription = document.getElementById('detail-description');
+        const detailAuthor = document.getElementById('detail-author');
+        const detailYear = document.getElementById('detail-year');
+        const detailCategory = document.getElementById('detail-category');
+        const detailImage = document.getElementById('detail-image');
+        const detailImageContainer = document.getElementById('detail-image-container');
+        const detailLink = document.getElementById('detail-link');
+        const detailTags = document.getElementById('detail-tags');
+
+        // Current page state
+        let currentPage = 'home';
+        let currentProjectId = null;
+
+        // Initialize the app
+        function init() {
+            // Load projects
+            loadFeaturedProjects();
+            loadAllProjects();
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Check for dark mode preference
+            checkDarkModePreference();
+            
+            // Show the initial page
+            showPage(currentPage);
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', toggleMobileMenu);
+            
+            // Theme toggle
+            themeToggle.addEventListener('click', toggleTheme);
+            mobileThemeToggle.addEventListener('click', toggleTheme);
+            
+            // Filter projects
+            applyFilter.addEventListener('click', filterProjects);
+            
+            // Form submission
+            projectForm.addEventListener('submit', handleFormSubmit);
+            
+            // Navigation
+            document.querySelectorAll('a[onclick^="navigate"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const page = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+                    navigate(e, page);
+                });
+            });
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Toggle dark/light theme
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                mobileThemeIcon.classList.replace('fa-sun', 'fa-moon');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                mobileThemeIcon.classList.replace('fa-moon', 'fa-sun');
+            }
+        }
+
+        // Check user's dark mode preference
+        function checkDarkModePreference() {
+            if (localStorage.getItem('color-theme') === 'dark' || (!localStorage.getItem('color-theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                mobileThemeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                document.documentElement.classList.remove('dark');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                mobileThemeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        }
+
+        // Navigate between pages
+        function navigate(event, page, projectId = null) {
+            event.preventDefault();
+            
+            // Close mobile menu if open
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+            
+            // Set current page and project ID if provided
+            currentPage = page;
+            if (projectId) {
+                currentProjectId = projectId;
+            }
+            
+            // Show the selected page
+            showPage(page);
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Show the specified page
+        function showPage(page) {
+            // Hide all pages
+            homePage.classList.add('hidden');
+            projectsPage.classList.add('hidden');
+            addProjectPage.classList.add('hidden');
+            projectDetailPage.classList.add('hidden');
+            
+            // Show the selected page
+            switch (page) {
+                case 'home':
+                    homePage.classList.remove('hidden');
+                    loadFeaturedProjects();
+                    break;
+                case 'projects':
+                    projectsPage.classList.remove('hidden');
+                    loadAllProjects();
+                    break;
+                case 'add-project':
+                    addProjectPage.classList.remove('hidden');
+                    break;
+                case 'project-detail':
+                    projectDetailPage.classList.remove('hidden');
+                    loadProjectDetail();
+                    break;
+                default:
+                    homePage.classList.remove('hidden');
+            }
+        }
+
+        // Load featured projects (first 3 projects)
+        function loadFeaturedProjects() {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const featuredProjects = projects.slice(0, 3);
+            
+            featuredProjectsContainer.innerHTML = '';
+            
+            if (featuredProjects.length === 0) {
+                featuredProjectsContainer.innerHTML = `
+                    <div class="col-span-full text-center py-12">
+                        <i class="fas fa-folder-open text-5xl text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white mb-2">No featured projects yet</h3>
+                        <p class="text-gray-600 dark:text-gray-300">Be the first to add a project!</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            featuredProjects.forEach(project => {
+                const projectCard = createProjectCard(project);
+                featuredProjectsContainer.appendChild(projectCard);
+            });
+        }
+
+        // Load all projects
+        function loadAllProjects(filterCategoryValue = 'all') {
+            let projects = JSON.parse(localStorage.getItem('projects')) || [];
+            
+            // Filter projects if needed
+            if (filterCategoryValue !== 'all') {
+                projects = projects.filter(project => project.category === filterCategoryValue);
+            }
+            
+            allProjectsContainer.innerHTML = '';
+            
+            if (projects.length === 0) {
+                noProjectsMessage.classList.remove('hidden');
+                return;
+            }
+            
+            noProjectsMessage.classList.add('hidden');
+            
+            projects.forEach(project => {
+                const projectCard = createProjectCard(project);
+                allProjectsContainer.appendChild(projectCard);
+            });
+        }
+
+        // Filter projects based on selected category
+        function filterProjects() {
+            const category = filterCategory.value;
+            loadAllProjects(category);
+        }
+
+        // Create a project card element
+        function createProjectCard(project) {
+            const card = document.createElement('div');
+            card.className = 'bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transition-all duration-300 card-hover';
+            
+            // Category badge colors
+            const categoryColors = {
+                web: 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
+                mobile: 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+                ai: 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
+                data: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
+                iot: 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200',
+                game: 'bg-pink-100 text-pink-800 dark:bg-pink-900 dark:text-pink-200',
+                other: 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200'
+            };
+            
+            // Category display names
+            const categoryNames = {
+                web: 'Web Development',
+                mobile: 'Mobile App',
+                ai: 'AI/ML',
+                data: 'Data Science',
+                iot: 'IoT',
+                game: 'Game Development',
+                other: 'Other'
+            };
+            
+            card.innerHTML = `
+                <div class="overflow-hidden">
+                    <img src="${project.image || 'https://images.unsplash.com/photo-1620325867502-221cfb5faa5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80'}" 
+                         alt="${project.title}" 
+                         class="w-full project-image">
+                </div>
+                <div class="p-6">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="text-xl font-bold text-gray-900 dark:text-white truncate">${project.title}</h3>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${categoryColors[project.category] || categoryColors.other}">
+                            ${categoryNames[project.category] || 'Other'}
+                        </span>
+                    </div>
+                    <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-2">${project.description}</p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        ${project.tags.map(tag => `
+                            <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
+                                ${tag}
+                            </span>
+                        `).join('')}
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500 dark:text-gray-400">${project.author} • ${project.year}</span>
+                        <button onclick="navigate(event, 'project-detail', '${project.id}')" class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+
+        // Load project details
+        function loadProjectDetail() {
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            const project = projects.find(p => p.id === currentProjectId);
+            
+            if (!project) {
+                // If project not found, redirect to projects page
+                navigate(new Event('click'), 'projects');
+                return;
+            }
+            
+            // Category display names
+            const categoryNames = {
+                web: 'Web Development',
+                mobile: 'Mobile App',
+                ai: 'AI/ML',
+                data: 'Data Science',
+                iot: 'IoT',
+                game: 'Game Development',
+                other: 'Other'
+            };
+            
+            // Update project details
+            detailTitle.textContent = project.title;
+            detailDescription.textContent = project.description;
+            detailAuthor.textContent = `By ${project.author}`;
+            detailYear.textContent = `• ${project.year}`;
+            detailCategory.textContent = categoryNames[project.category] || 'Other';
+            
+            // Set project image or default
+            if (project.image) {
+                detailImage.src = project.image;
+                detailImage.alt = project.title;
+            } else {
+                detailImageContainer.style.background = 'linear-gradient(135deg, #3b82f6, #8b5cf6)';
+                detailImage.style.display = 'none';
+            }
+            
+            // Set project link or hide button
+            if (project.link) {
+                detailLink.href = project.link;
+                detailLink.style.display = 'inline-flex';
+            } else {
+                detailLink.style.display = 'none';
+            }
+            
+            // Add tags
+            detailTags.innerHTML = '';
+            if (project.tags && project.tags.length > 0) {
+                project.tags.forEach(tag => {
+                    const tagElement = document.createElement('span');
+                    tagElement.className = 'inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200';
+                    tagElement.textContent = tag;
+                    detailTags.appendChild(tagElement);
+                });
+            } else {
+                const noTags = document.createElement('p');
+                noTags.className = 'text-gray-600 dark:text-gray-300';
+                noTags.textContent = 'No technologies specified';
+                detailTags.appendChild(noTags);
+            }
+        }
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const title = document.getElementById('project-title').value;
+            const description = document.getElementById('project-description').value;
+            const category = document.getElementById('project-category').value;
+            const year = document.getElementById('project-year').value;
+            const image = document.getElementById('project-image').value;
+            const link = document.getElementById('project-link').value;
+            const tags = document.getElementById('project-tags').value.split(',').map(tag => tag.trim()).filter(tag => tag);
+            const author = document.getElementById('project-author').value;
+            
+            // Create new project
+            const newProject = {
+                id: Date.now().toString(),
+                title,
+                description,
+                category,
+                year,
+                image,
+                link,
+                tags,
+                author
+            };
+            
+            // Save to localStorage
+            const projects = JSON.parse(localStorage.getItem('projects')) || [];
+            projects.unshift(newProject); // Add to beginning of array
+            localStorage.setItem('projects', JSON.stringify(projects));
+            
+            // Reset form
+            projectForm.reset();
+            
+            // Show success message
+            document.getElementById('success-message').textContent = 'Your project has been added successfully!';
+            showModal('success-modal');
+            
+            // Redirect to projects page after a delay
+            setTimeout(() => {
+                closeModal('success-modal');
+                navigate(new Event('click'), 'projects');
+            }, 2000);
+        }
+
+        // Show modal
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        // Close modal
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Initialize the app when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

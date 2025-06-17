@@ -1,16 +1,32 @@
 body{
     min-height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
 }
 
-.example{
-    padding-left: 20px;
-    margin-top: 1rem;
-    border: 1px solid red;
+.hero{
+    border-bottom: 2px solid red;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    display: flex;
+    
 }
 
-.example img{
-    width: 25%;
-    height: auto;
+.hero img{
+   
+    
+}
+
+.h1{
+    font-size: 500%;
+}
+.profile-pic-figure img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border: 5px double gray;
+    border-radius: 100%;
     display: inline-block;
 }

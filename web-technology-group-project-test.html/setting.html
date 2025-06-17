@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Settings</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>StudentShowcase</h2>
+      <ul>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Account</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Billing</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header>
+        <h1>Account Settings</h1>
+        <button class="submit-btn">+ Submit Project</button>
+      </header>
+
+      <!-- Profile Info -->
+      <section class="section">
+        <h2>Profile Information</h2>
+        <form>
+          <div class="form-group">
+            <label>Full Name</label>
+            <input type="text" placeholder="John Smith" />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="john@example.com" />
+          </div>
+          <div class="form-group">
+            <label>Bio</label>
+            <textarea rows="3" placeholder="Tell us about yourself..."></textarea>
+          </div>
+          <button type="submit">Save Changes</button>
+        </form>
+      </section>
+
+      <!-- Password -->
+      <section class="section">
+        <h2>Change Password</h2>
+        <form>
+          <div class="form-group">
+            <label>Current Password</label>
+            <input type="password" />
+          </div>
+          <div class="form-group">
+            <label>New Password</label>
+            <input type="password" />
+          </div>
+          <button type="submit">Update Password</button>
+        </form>
+      </section>
+
+      <!-- Notifications -->
+      <section class="section">
+        <h2>Notification Settings</h2>
+        <form>
+          <label><input type="checkbox" checked /> Email me project updates</label><br />
+          <label><input type="checkbox" /> Email me mentions</label><br />
+          <label><input type="checkbox" /> Weekly digest</label><br />
+          <button type="submit">Save Notification Settings</button>
+        </form>
+      </section>
+
+      <!-- Privacy -->
+      <section class="section">
+        <h2>Privacy Settings</h2>
+        <form>
+          <div class="form-group">
+            <label>Profile Visibility</label>
+            <select>
+              <option>Everyone</option>
+              <option>Only Me</option>
+              <option>My Connections</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Project Visibility</label>
+            <select>
+              <option>Public</option>
+              <option>Private</option>
+            </select>
+          </div>
+          <button type="submit">Save Privacy Settings</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
