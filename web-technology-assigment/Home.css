@@ -3,6 +3,14 @@
     padding: 0;
 }
 
+body{
+    background-image: url("Practical Tutorial 03 images/image03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
 .header{
     height: 100px;
     width: auto;
@@ -50,4 +58,87 @@
     display: inline;
     color: white;
     text-decoration: none;
+}
+
+.container{
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    width: 100vw;
+    align-items: center;
+    padding-top: 20px;
+    
+}
+
+.mid-content{
+    background-color: black;
+    opacity: 0.6;
+    color: white;
+    text-align: center;
+    padding: 200px;
+    height: 30%;
+    width: 70%;
+    border: 5px solid white;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
+    padding-top: px;
+    align-items: center;
+}
+
+.button{
+    background-color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    height: 45px;
+    width: 250px;
+    cursor: pointer;
+    text-align: center;
+    margin: 10px;
+    border: 5px solid red;
+    display: inline-block;
+}
+
+.button a{
+    color: black;
+    text-decoration: none;
+
+}
+
+
+.footer{
+    height: 400px;
+    background-color: black;
+    
+}
+
+.footer-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.footer-col{
+    flex: 1 1 22%;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.footer-col h2{
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-col ul{
+    list-style: none;
+    padding: 0;
+}
+
+
+
+
+.footer .last-updated{
+    text-align: center;
+    background-color: gray;
+    color: #fff;
+    padding: 30px 20px;
 }
