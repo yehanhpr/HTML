@@ -32,7 +32,7 @@
 }
 
 .nav-bar{
-    display: inline-block;
+    width: auto;
 }
 
 .nav-bar ul{
@@ -41,5 +41,13 @@
 
 .nav-bar ul li{
     display: inline;
-    padding: 10px;
+    padding-left: 10px;
+    float: right;
+
+}
+
+.nav-bar ul li a{
+    display: inline;
+    color: white;
+    text-decoration: none;
 }
