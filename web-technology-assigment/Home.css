@@ -1,0 +1,45 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    height: 100px;
+    width: auto;
+    background-color: black;
+    position: relative;
+    color: white;
+}
+
+.logo-left{
+    height: 50px;
+    display: flex;
+    float: left;
+}
+
+.logo-right{
+    height: 50px;
+    display: flex;
+    float: right;
+}
+
+.header2{
+    text-align: center;
+    font-size: 30px;
+    padding-top: 8px;
+    font-family: 'Times New Roman', Times, serif;
+    letter-spacing: 2px;
+}
+
+.nav-bar{
+    display: inline-block;
+}
+
+.nav-bar ul{
+    float: right;
+}
+
+.nav-bar ul li{
+    display: inline;
+    padding: 10px;
+}
