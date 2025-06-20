@@ -1,0 +1,62 @@
+*{
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: white;
+    justify-content: center;
+    height: 100vh;
+}
+
+header{
+    background-color: black;
+    height: 100px;
+    width: 100%;
+    position: relative;
+    color: white;
+}
+
+.logo-left{
+    float: left;
+    height: 50px;
+    display: flex;
+}
+
+.logo-right{
+    float: right;
+    height: 50px;
+    display: flex;
+}
+
+.header2{
+    display: flex;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.nav-bar{
+    width: auto;
+
+}
+
+.nav-bar ul{
+    float: right;
+}
+
+.nav-bar ul li{
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.nav-bar ul li a{
+    text-decoration: none;
+    color: white;
+    display: inline-flex;
+    flex-wrap:inherit;
+}
