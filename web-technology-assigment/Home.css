@@ -1,17 +1,17 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-image: url("Practical Tutorial 03 images/image03.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    
+
 }
 
-.header{
+.header {
     height: 100px;
     width: auto;
     background-color: black;
@@ -19,58 +19,57 @@ body{
     color: white;
 }
 
-.logo-left{
+.logo-left {
     height: 50px;
     display: flex;
     float: left;
 }
 
-.logo-right{
+.logo-right {
     height: 50px;
     display: flex;
     float: right;
 }
 
-.header2{
+.header2 {
     text-align: center;
     font-size: 30px;
-    padding-top: 8px;
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 2px;
 }
 
-.nav-bar{
+.nav-bar {
     width: auto;
 }
 
-.nav-bar ul{
+.nav-bar ul {
     float: right;
 }
 
-.nav-bar ul li{
+.nav-bar ul li {
     display: inline;
     padding-left: 10px;
     float: right;
 
 }
 
-.nav-bar ul li a{
+.nav-bar ul li a {
     display: inline;
     color: white;
     text-decoration: none;
 }
 
-.container{
+.container {
     height: 100vh;
     justify-content: center;
     display: flex;
     width: 100vw;
     align-items: center;
     padding-top: 20px;
-    
+
 }
 
-.mid-content{
+.mid-content {
     background-color: black;
     opacity: 0.6;
     color: white;
@@ -85,7 +84,7 @@ body{
     align-items: center;
 }
 
-.button{
+.button {
     background-color: white;
     font-size: 14px;
     padding: 10px 20px;
@@ -98,59 +97,66 @@ body{
     display: inline-block;
 }
 
-.button a{
+.button a {
     color: black;
     text-decoration: none;
 
 }
 
 
-.footer{
+.footer {
     height: 400px;
     background-color: black;
-    
+    width: 100vw;
+
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     color: white;
     align-items: center;
+    align-items: flex-start;
 }
 
-.footer-col{
+.footer-col {
     flex: 1 1 22%;
     margin: 10px;
     min-width: 200px;
+    font-size: 20px;
 }
 
-.bottom-logo1{
+.bottom-logo1 {
     border-radius: 50%;
-
+    border: 5px solid red;
+    display: block;
+    margin: 0 auto 20px;
 }
 
-.footer-col h2{
+.footer-logo1-p{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.footer-col h2 {
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.footer-col ul{
+.footer-col ul {
     list-style: none;
     padding: 0;
 }
 
 .footer-col ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.footer-col ul li a:hover {
-  text-decoration: underline;
+    color: #fff;
+    text-decoration: none;
 }
 
 
-.footer .last-updated{
+
+.footer .last-updated {
+    height: 10px;
     text-align: center;
     background-color: gray;
     color: #fff;
@@ -158,7 +164,12 @@ body{
 }
 
 .bottom-logo {
-    width: 150px;
-    height: 150px;
+    width: 250px;
+    height: 180px;
     margin-bottom: 10px;
+}
+
+.footer-logo1-p {
+    text-align: center;
+    font-size: 16px;
 }
