@@ -4,16 +4,15 @@
 }
 
 body {
-    background-image: url("Practical Tutorial 03 images/image03.jpg");
+    background-image: url("Practical Tutorial 03 images/image13.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: 100;
-
+    background-position: center;
 }
 
 .header {
     height: 100px;
-    width: auto;
+    width: 100%;
     background-color: black;
     position: relative;
     color: white;
@@ -62,50 +61,68 @@ body {
     text-decoration: none;
 }
 
-.container {
+.Hostel-container {
     height: 100vh;
+    align-items: center;
     justify-content: center;
     display: flex;
-    width: 100vw;
-    align-items: center;
-    padding-top: 20px;
-
+    
 }
 
-.mid-content {
-    background-color: black;
-    opacity: 0.6;
-    color: white;
-    text-align: center;
-    padding: 200px;
-    height: 30%;
+.mid-content{
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 70%;
     width: 70%;
-    border: 5px solid white;
-    font-size: 20px;
+    color: black;font-size: 20px;
+    font-weight: bold;
     font-family: 'Times New Roman', Times, serif;
-    padding-top: px;
-    align-items: center;
-}
-
-.button {
-    background-color: white;
-    font-size: 14px;
     padding: 10px 20px;
-    height: 45px;
-    width: 250px;
-    cursor: pointer;
-    text-align: center;
-    margin: 10px;
-    border: 5px solid red;
-    display: inline-block;
+    border: 4px solid green;
+    border-radius: 50px;
+
 }
 
-.button a {
+.topic{
+    color: rgb(245, 241, 15);
+}
+
+hr{
+    margin-right: 80%;
+    background-color: rgb(241, 246, 242);
+    height: 4px;
+    border: 1px solid white;
+}
+
+label{
+    display: block;
+}
+
+input{
+    border: 1px solid white;
+    border-radius: 5px;
+    height: 30px;
+    width: 100%;
+    font-size: 15px;
+}
+
+.book-button {
+    background-color: rgb(253, 255, 253);
     color: black;
-    text-decoration: none;
-
+    border: 4px solid red;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 2px 2px 5px;
+    transition: 0.3s;
+    margin-left: 45%;
 }
-
+.book-button:hover {
+    background-color: rgb(255, 0, 0);
+    color: white;
+    opacity: 0.5;
+}
 
 .footer {
     height: 400px;
