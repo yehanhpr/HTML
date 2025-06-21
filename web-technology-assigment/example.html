@@ -1,35 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <style>
-    .button-group {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+    .icon-container {
+      display: inline-block;
+      text-align: center;
+      position: relative;
+      margin: 10px;
     }
 
-    .btn {
-      padding: 10px 20px;
-      background-color: #007BFF;
-      color: white;
-      border: none;
+    .icon {
+      width: 64px;
+      /* width of one icon */
+      height: 64px;
+      /* height of one icon */
+      background-image: url('social-icons.png');
+      background-repeat: no-repeat;
       cursor: pointer;
+      margin-bottom: 5px;
     }
 
-    .separator {
-      width: 1px;
-      height: 24px;
-      background-color: #ccc;
+    /* WhatsApp default position in sprite (row 1) */
+    .whatsapp {
+      background-position: 0 0;
+    }
+
+    /* On hover: show 2nd row (hover state) */
+    .whatsapp:hover {
+      background-position: 0 -64px;
+    }
+
+    /* Tooltip text */
+    .tooltip {
+      display: none;
+      background: #eee;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 4px;
+      position: absolute;
+      top: 70px;
+      /* Just below the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Show tooltip on hover */
+    .icon-container:hover .tooltip {
+      display: block;
     }
   </style>
 </head>
-<body>
 
-<div class="button-group">
-  <button class="btn">Button 1</button>
-  <div class="separator"></div>
-  <button class="btn">Button 2</button>
-</div>
+<body>
+  <div class="icon-container">
+    <div class="icon whatsapp"></div>
+    <div class="tooltip">WhatsApp</div>
+  </div>
 
 </body>
+
 </html>
