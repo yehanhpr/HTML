@@ -36,6 +36,10 @@ body {}
     width: auto;
 }
 
+/* .active {
+    background-color: red;
+} */
+
 .nav-bar ul {
     float: right;
 }
@@ -138,6 +142,7 @@ hr {
     height: 90px;
     width: 150px;
     padding-top: 15px;
+    /* background-position: 0 0; */
 }
 
 .social-media-logo .w-app img {

@@ -3,61 +3,71 @@
 
 <head>
   <style>
-    .icon-container {
+    .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .social-icons li {
       display: inline-block;
-      text-align: center;
-      position: relative;
-      margin: 10px;
+      margin: 0 10px;
     }
 
-    .icon {
-      width: 64px;
-      /* width of one icon */
-      height: 64px;
-      /* height of one icon */
-      background-image: url('social-icons.png');
+    .social-icons a {
+      display: block;
+      width: 40px;
+      /* Icon width */
+      height: 40px;
+      /* Icon height */
+      background-image: url('social-sprite.png');
       background-repeat: no-repeat;
-      cursor: pointer;
-      margin-bottom: 5px;
+      text-indent: -9999px;
+      /* Hide text */
+      overflow: hidden;
     }
 
-    /* WhatsApp default position in sprite (row 1) */
-    .whatsapp {
+    /* Position each icon in the sprite */
+    .facebook {
       background-position: 0 0;
     }
 
-    /* On hover: show 2nd row (hover state) */
-    .whatsapp:hover {
-      background-position: 0 -64px;
+    .twitter {
+      background-position: -40px 0;
+      /* Move left by one icon width */
     }
 
-    /* Tooltip text */
-    .tooltip {
-      display: none;
-      background: #eee;
-      padding: 4px 8px;
-      font-size: 12px;
-      border-radius: 4px;
-      position: absolute;
-      top: 70px;
-      /* Just below the icon */
-      left: 50%;
-      transform: translateX(-50%);
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    .instagram {
+      background-position: -80px 0;
+      /* Move left by two icon widths */
     }
 
-    /* Show tooltip on hover */
-    .icon-container:hover .tooltip {
-      display: block;
+    /* Hover states */
+    .facebook:hover {
+      background-position: 0 -40px;
+      /* Move up to show hover version */
     }
+
+    .twitter:hover {
+      background-position: -40px -40px;
+    }
+
+    .instagram:hover {
+      background-position: -80px -40px;
+    }
+    .social-icons a {
+    transition: background-position 0.3s ease;
+}
   </style>
 </head>
 
 <body>
   <div class="icon-container">
-    <div class="icon whatsapp"></div>
-    <div class="tooltip">WhatsApp</div>
-  </div>
+    <ul class="social-icons">
+      <li><a href="#" class="facebook">Facebook</a></li>
+      <li><a href="#" class="twitter">Twitter</a></li>
+      <li><a href="#" class="instagram">Instagram</a></li>
+    </ul>
 
 </body>
 
