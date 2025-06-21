@@ -96,12 +96,13 @@ hr{
     font-size: 20px;
     margin-left: 20%;
     margin-right: 20%;
+    margin-bottom: 50px;
 }
 
 .about-buttons{
     display: flex;
     margin-left: 42%;
-    margin-top: 50px;
+    margin-top: 0px;
     height: 35px;
     width: 150px;
     justify-content: center;
@@ -113,8 +114,9 @@ hr{
 
 .separator {
     width: 2px;
-    height: 10px;
+    height: 100px;
     background-color: black;
+    margin-left: 51.5%;
 }
 
 .footer {
