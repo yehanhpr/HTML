@@ -54,15 +54,40 @@
     text-decoration: none;
 }
 
-.reviewpage-container {
+.reviewpage-container{
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    background-color: gray;
+    padding-left: 20px;
+}
+
+.reviewpage-container h2{
+    color: yellow;
+    font-size: 50px;
+}
+
+hr{
+    height: 3px;
+    background-color: white;
+    margin-right: 50%;
+}
+.review-content {
     display: grid;
-    grid-template-columns: 1fr, 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
     gap: 20px;
+    padding-top: 100px;
 }
 
 .review-item{
     background-color: white;
+    width: 500px;
     
+}
+
+.review-content img{
+    height: 100px;
 }
 
 
