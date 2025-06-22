@@ -127,7 +127,7 @@ input{
 .footer {
     height: 400px;
     background-color: black;
-    width: 100vw;
+    width: 100%;
 
 }
 
@@ -199,12 +199,12 @@ input{
 
 
 
-.footer .last-updated {
-    height: 10px;
+.last-updated {
+    height: 30px;
+    padding-top: 4px;
     text-align: center;
     background-color: gray;
     color: #fff;
-    padding: 30px 20px;
 }
 
 .bottom-logo {

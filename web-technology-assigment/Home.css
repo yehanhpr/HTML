@@ -137,29 +137,29 @@ body {
     margin: 0 auto 20px;
 }
 
-.footer-logo1-p{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.footer-logo1-p {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .information {
-    display:flex;
+    display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.inf-logo-1 img{
+.inf-logo-1 img {
     height: 35px;
     border-radius: 50%;
     display: flexbox;
 }
 
-.inf-logo-2 img{
+.inf-logo-2 img {
     height: 35px;
     border-radius: 50%;
     display: block;
 }
 
-.inf-logo-3 img{
+.inf-logo-3 img {
     height: 35px;
     border-radius: 50%;
     display: block;
@@ -183,6 +183,7 @@ body {
 
 .last-updated {
     height: 30px;
+    padding-top: 4px;
     text-align: center;
     background-color: gray;
     color: #fff;
