@@ -5,7 +5,7 @@
     <title>Home Page</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Home.css">
+    <link rel="stylesheet" href="contact-page.css">
 </head>
 
 <body>
@@ -28,7 +28,40 @@
     </header>
 
     <section class="contact-container">
-        <div></div>
+
+        <div class="background-image">
+            <img src="Practical Tutorial 03 images/image08.jpg" alt="">
+        </div>
+
+        <div class="contact-form">
+            <h1>Contact Us</h1>
+            <hr>
+
+            <form class="form">
+                <label for="name"></label>
+                <input type="text" name="name" id="name" placeholder="Name" required>
+
+                <label for="subject"></label>
+                <input type="text" name="subject" id="subject" placeholder="Subject" required>
+
+                <label for="phone"></label>
+                <input type="number" name="phone" id="phone" placeholder="Phone" required>
+
+                <label for="email"></label>
+                <input type="email" name="email" id="email" placeholder="Email" required>
+
+                <labe class="msg" for="massage"></label>
+                <input type="text" name="massage" id="massage" placeholder="Massage">
+            </form>
+
+            <button class="submit-button" type="submit">
+                Submit
+            </button>
+        </div>
+
+        <div class="background-image">
+            <img src="Practical Tutorial 03 images/image08.jpg" alt="">
+        </div>
 
     </section>
 
@@ -57,22 +90,26 @@
 
             <div class="footer-col">
                 <h2>Information</h2>
-                    <div>
-                        <div class="information">
-                            <div class="inf-logo-1"><img src="Practical Tutorial 03 images\download.png" alt=""></div>
-                            <div><p>Pet Care (pvt)Ltd, 123, 1st floor, <br> Dalugam, Kelaniya,</p></div>
-                        </div><br>
-
+                <div>
+                    <div class="information">
+                        <div class="inf-logo-1"><img src="Practical Tutorial 03 images\download.png" alt=""></div>
                         <div>
-                            <div class="inf-logo-2"><img src="Practical Tutorial 03 images\download (1).png" alt=""></div>
-                            <div><p>Telephone : 0112 999999 <br> Fax : 0094 112 621 382</p></div>
-                        </div><br>
-
-                        <div>
-                            <div class="inf-logo-3"><img src="Practical Tutorial 03 images\images.jpg" alt=""></div>
-                            <div><a href="mailto:info@petcare.com">info@petcare.com</a></div>
+                            <p>Pet Care (pvt)Ltd, 123, 1st floor, <br> Dalugam, Kelaniya,</p>
                         </div>
+                    </div><br>
+
+                    <div>
+                        <div class="inf-logo-2"><img src="Practical Tutorial 03 images\download (1).png" alt=""></div>
+                        <div>
+                            <p>Telephone : 0112 999999 <br> Fax : 0094 112 621 382</p>
+                        </div>
+                    </div><br>
+
+                    <div>
+                        <div class="inf-logo-3"><img src="Practical Tutorial 03 images\images.jpg" alt=""></div>
+                        <div><a href="mailto:info@petcare.com">info@petcare.com</a></div>
                     </div>
+                </div>
 
             </div>
 
@@ -89,4 +126,5 @@
 
     </footer>
 </body>
+
 </html>
