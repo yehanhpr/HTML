@@ -76,14 +76,34 @@
     height: 50vh;
 }
 
+.contact-form h1{
+    font-size: 35px;
+    padding-left: 29px;
+}
+
 .form{
     padding-left: 50px;
     font-size: 25px;
 }
 
+.contact-form hr{
+    height: 4px;
+    background-color: black;
+    border: none;
+    margin-right: 55%;
+    margin-left: 29px;
+}
+
 .contact-form input{
     height: 30px;
     width: 95%;
+    padding-left: 10px;
+    transition: 0.3s;
+
+}
+
+.contact-form input:hover{
+    background-color: rgb(241, 241, 120);
 }
 
 .contact-form label{
@@ -93,10 +113,22 @@
 .msg input{
     margin-top: 10px;
     height: 70px;
+    padding-left: 10px;
 }
 
 .submit-button{
+    margin-top: 30px;
     height: 30px;
+    width: 95%;
+    background-color: yellow;
+    border-radius: 18px;
+    box-shadow: 2px 2px 5px;
+    transition: 0.3s;
+}
+
+.submit-button:hover{
+    background-color: orange;
+    opacity: 0.8;
 }
 
 
