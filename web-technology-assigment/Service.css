@@ -52,6 +52,9 @@ header {
     font-size: 20px;
     padding-right: 10px;
     padding-left: 10px;
+    &:hover{
+        background-color: red;
+    }
 }
 
 .nav-bar ul li a {
