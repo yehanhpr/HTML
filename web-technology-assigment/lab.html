@@ -1,0 +1,18 @@
+<html>
+
+<body>
+    <button onclick="openWin()">Open</button>
+    <button onclick="closeWin()">Close</button>
+    <script>
+        var myWindow;
+        function openWin() {
+            myWindow = window.open("http://www.sjp.ac.lk", "",
+                "width=200,height=100");
+        }
+        function closeWin() {
+            myWindow.close();
+        }
+    </script>
+</body>
+
+</html>

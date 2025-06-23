@@ -53,6 +53,9 @@ body {
     padding-left: 10px;
     float: right;
     padding-right: 10px;
+    &:hover{
+        background-color: red;
+    }
 
 }
 
@@ -61,6 +64,10 @@ body {
     color: white;
     text-decoration: none;
 }
+
+/* .nav-bar ul li text{
+    background-color: red;
+} */
 
 .container {
     height: 100vh;
