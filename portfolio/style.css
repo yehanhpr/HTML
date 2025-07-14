@@ -45,13 +45,13 @@
           top: 0;
           z-index: 100;
           background: linear-gradient(90deg,
-              black,
+              rgb(0, 0, 0),
               /* Pink */
               black,
               /* Blue */
               #000000,
               /* Black */
-              #300101,
+              #06615c,
               /* Repeat black to smooth transition */
               black
               /* Loop back to pink */
